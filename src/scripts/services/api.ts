@@ -1,13 +1,23 @@
+import { ErrorObject } from "../helpers/ErrorObject";
+
 const apiUrl = `http://localhost:6010`;
 
 export class ArticlesAPI {
   public async fetchAllArticles(categories: string[]) {
     try {
-      return await fetch(
+      const res = await fetch(
         `${apiUrl}/articles?category=${categories.join(",")}`
-      ).then((res) => res.json());
+      );
+
+      if (res.status !== 200) {
+        throw new Error("Something went wrong... Please try again.");
+      }
+
+      const data = await res.json();
+
+      return data.articles;
     } catch (error) {
-      throw new Error(error);
+      new ErrorObject(error.message);
     }
   }
 }
