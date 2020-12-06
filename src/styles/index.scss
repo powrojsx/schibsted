@@ -1,0 +1,21 @@
+@import "~bulma/bulma.sass";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.date-button {
+  &::after {
+    content: '▲';
+    margin-left: 4px;
+    transform: rotate(180deg)
+  }
+
+  &--asc {
+    &::after{
+      transform: rotate(0);
+    }
+  }
+}

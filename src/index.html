@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News APP</title>
+</head>
+<body>
+    <main class="section">
+        <div class="container mt-4">
+            <div class="columns">
+                <div class="column is-flex-desktop is-justify-content-flex-end">
+                    <button class="button date-button js-sort-by-date">Sort by date</button>
+                </div>
+            </div>
+            <div class="columns is-desktop">
+                <aside class="column is-12 is-4-desktop">
+                    <p class="is-size-5 has-text-weight-bold">Data sources</p>
+                    <div class="is-flex mt-2">
+                        <label class="checkbox is-flex is-align-items-center">
+                            <input type="checkbox" name="filters" value="fashion" class="mr-2" id="fashion-filter" />
+                            Fashion
+                        </label>
+                        <label class="checkbox is-flex is-align-items-center ml-4">
+                            <input type="checkbox" name="filters" value="sport" class="mr-2" id="sport-filter" />
+                            Sports
+                        </label>
+                    </div>
+                </aside>
+                <ul class="column is-12 is-8-desktop js-articles-list">
+                </ul>
+            </div>
+        </div>
+    </main>
+    <template id="article-item">
+        <li class="media mb-4">
+            <figure class="media-left">
+                <p class="image is-128x128">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="" class="js-image" />
+                </p>
+            </figure>
+            <div class="media-content">
+                <div class="content is-flex-desktop is-justify-content-space-between">
+                    <h2 class="js-title subtitle">
+                    </h2>
+                    <p class="js-date is-size-6">
+                    </p>
+                </div>
+                <div class="content is-hidden-mobile is-hidden-tablet-only">
+                    <p class="js-content"></p>
+                </div>
+            </div>
+        </li>
+    </template>
+</body>
+</html>
