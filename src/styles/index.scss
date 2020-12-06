@@ -1,4 +1,12 @@
-@import "~bulma/bulma.sass";
+@import "~bulma/sass/utilities/all";
+@import "~bulma/sass/grid/columns";
+@import "~bulma/sass/layout/section";
+@import "~bulma/sass/components/media";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/helpers/flexbox";
+@import "~bulma/sass/helpers/typography";
+@import "~bulma/sass/base/generic";
+@import "~bulma/sass/elements/image";
 
 * {
   margin: 0;
@@ -18,4 +26,15 @@
       transform: rotate(0);
     }
   }
+}
+
+.error {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  color: white;
+  background: darkred;
 }
