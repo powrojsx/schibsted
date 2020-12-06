@@ -76,8 +76,11 @@ class App implements IApp {
   };
 
   fetchArticles = async () => {
-    const { articles } = await this.api.fetchAllArticles(this.state.filters);
-    this.state.articles = articles;
+    const res = await this.api.fetchAllArticles(this.state.filters);
+
+    if (res) {
+      this.state.articles = res;
+    }
   };
 
   renderArticles = () => {
