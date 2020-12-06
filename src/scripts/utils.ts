@@ -1,4 +1,4 @@
-import { IArticle } from "scripts/interfaces";
+import { IArticle } from "./interfaces";
 
 interface ArticleDTO {
   title: string;
