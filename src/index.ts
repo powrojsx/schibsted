@@ -4,12 +4,6 @@ import { ArticlesAPI } from "./scripts/services/api";
 import { IApp, IArticle, IDOMElements, IState } from "./scripts/interfaces";
 
 class App implements IApp {
-  constructor() {
-    this.setupListeners();
-    this.setInitialUIState();
-    this.fetchAndRenderArticles();
-  }
-
   state: IState = {
     filters: ["sport"],
     articles: [],
@@ -24,6 +18,12 @@ class App implements IApp {
   };
 
   api = new ArticlesAPI();
+
+  init = () => {
+    this.setupListeners();
+    this.setInitialUIState();
+    this.fetchAndRenderArticles();
+  };
 
   changeFilter = (key: string) => (event: any) => {
     if (!event.target.checked) {
@@ -104,4 +104,4 @@ class App implements IApp {
   };
 }
 
-new App();
+new App().init();
