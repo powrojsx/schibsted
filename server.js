@@ -101,11 +101,18 @@ function requestHandler(req, res) {
       const queryObject = url.parse(req.url, true).query;
       const categories = queryObject.category.split(",");
 
-      content = {
-        articles: fakeArticlesData.filter((a) =>
-          categories.includes(a.category)
-        ),
-      };
+      if (categories.length === 0) {
+        content = {
+          articles: fakeArticlesData,
+        };
+      } else {
+        content = {
+          articles: fakeArticlesData.filter((a) =>
+            categories.includes(a.category)
+          ),
+        };
+      }
+
       status = 200;
     } else {
       content = { message: "Not found" };

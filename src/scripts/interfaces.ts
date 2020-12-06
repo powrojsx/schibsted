@@ -30,4 +30,5 @@ export interface IApp {
   fetchArticles: () => void;
   renderArticles: () => void;
   fetchAndRenderArticles: () => void;
+  init: () => void;
 }
